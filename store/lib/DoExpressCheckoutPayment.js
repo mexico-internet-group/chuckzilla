@@ -17,7 +17,7 @@ module.exports = function(db, store, payload, response){
 				price += val.details.price;
 			}
 		});
-		
+
 		if(price < 2999){
 			price += parseFloat(payload.obj.amount);
 		}
@@ -25,9 +25,9 @@ module.exports = function(db, store, payload, response){
 		request.post({
 				url: process.env.NODE_ENV === 'production' ? 'https://api-3t.paypal.com/nvp' : 'https://api-3t.sandbox.paypal.com/nvp',
 				form: {
-					USER: 'admin_api2.hmovil.com',
-					PWD: 'XSZBPL8LBMQJMYC6',
-					SIGNATURE: 'AFcWxV21C7fd0v3bYYYRCpSSRl31AY.vHmPQniE7veOhSfvaKHXP7Bma',
+					USER: '####.####.####.####',
+					PWD: '####.####.####.####',
+					SIGNATURE: '####.####.####.####',
 					METHOD: 'DoExpressCheckoutPayment',
 					VERSION: '93',
 					TOKEN: payload.obj.token,

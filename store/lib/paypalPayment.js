@@ -5,18 +5,18 @@ const util = require('util');
 const redir = {};
 
 if(typeof process.env.NODE_ENV === 'undefined' || process.env.NODE_ENV !== 'production'){
-	redir.return_url = '//dgl.com/pago-seguro?return_url=ppp';
-	redir.cancel_url = '//dgl.com/pago-seguro?cancel_url=ppp';
+	redir.return_url = '//####.####.####.####/pago-seguro?return_url=ppp';
+	redir.cancel_url = '//####.####.####.####/pago-seguro?cancel_url=ppp';
 }
 else{
-	redir.return_url = '//hmovil.com/pago-seguro?return_url=ppp';
-	redir.cancel_url = '//hmovil.com/pago-seguro?cancel_url=ppp';
+	redir.return_url = '//####.####.####.####/pago-seguro?return_url=ppp';
+	redir.cancel_url = '//####.####.####.####/pago-seguro?cancel_url=ppp';
 }
 
 module.exports = function(db, store, payload, response){
     paypal.configure({
-      'client_id': 'AZWziGxDKFPvhhhsd-VsOowwFSMG_HN0_deIJNJRKhTQmFr5G90FYZPHwQIq7_50HxV19EgN9lmdEafW',
-      'client_secret': 'EOyxAixI1aTEbqRyuMwq0Cv1Bbd4poyJuBjjNKr_npmLYVeM9jNtHVcVTWVCcQy7E9vtW9BJIlnDuMSN'
+      'client_id': '####.####.####.####',
+      'client_secret': '####.####.####.####'
     });
 
 	var user = store.users[payload.token];

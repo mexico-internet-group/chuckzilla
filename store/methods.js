@@ -29,11 +29,6 @@ var resetPassword = require('./lib/resetPassword');
 var fx = function(db, store, payload, response, createBucketFiles){
 	var _this = this;
 
-	this.GET_STATE = function(){
-		getState(db, store, payload, response);
-		return;
-	};
-
 	this.SET_USER = function(){
 		setUser(db, store, payload, response);
 		return;
@@ -152,7 +147,7 @@ var fx = function(db, store, payload, response, createBucketFiles){
 		newsRegister(db, store, payload, response);
 		return;
 	};
-	
+
 	this.RESET_PASSWORD = function(){
 		return resetPassword(db, store, payload, response);
 	};

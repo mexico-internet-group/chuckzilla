@@ -1,5 +1,5 @@
 var openPayClass = require('openpay');
-var openpay = new openPayClass('mgrw4ztnu6wiuo3bdysp', 'sk_b7860786e81d43388d189b58cc251271', false);
+var openpay = new openPayClass('####.####.####.####', '####.####.####.####', false);
 var addToOrders = require('./sendPayment/addToOrders');
 
 module.exports = function(db, store, payload, response){

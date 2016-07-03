@@ -4,12 +4,12 @@ var request = require('request');
 var redir = {};
 
 if(typeof process.env.NODE_ENV === 'undefined' || process.env.NODE_ENV !== 'production'){
-	redir.return_url = 'https://dgl.com/pago-seguro?return_url=ppp';
-	redir.cancel_url = 'https://dgl.com/pago-seguro?cancel_url=ppp';
+	redir.return_url = 'https://####.####.####.####/pago-seguro?return_url=ppp';
+	redir.cancel_url = 'https://####.####.####.####/pago-seguro?cancel_url=ppp';
 }
 else{
-	redir.return_url = 'https://hmovil.com/pago-seguro?return_url=ppp';
-	redir.cancel_url = 'https://hmovil.com/pago-seguro?cancel_url=ppp';
+	redir.return_url = 'https://####.####.####.####/pago-seguro?return_url=ppp';
+	redir.cancel_url = 'https://####.####.####.####/pago-seguro?cancel_url=ppp';
 }
 
 module.exports = function(db, store, payload, response){
@@ -28,7 +28,7 @@ module.exports = function(db, store, payload, response){
 				price += val.details.price;
 			}
 		});
-		
+
 		if(price < 2999){
 			price += parseFloat(payload.amount);
 		}
@@ -36,9 +36,9 @@ module.exports = function(db, store, payload, response){
 		request.post({
 				url: process.env.NODE_ENV === 'production' ? 'https://api-3t.paypal.com/nvp' : 'https://api-3t.sandbox.paypal.com/nvp',
 				form: {
-					USER: 'admin_api2.hmovil.com',
-					PWD: 'XSZBPL8LBMQJMYC6',
-					SIGNATURE: 'AFcWxV21C7fd0v3bYYYRCpSSRl31AY.vHmPQniE7veOhSfvaKHXP7Bma',
+					USER: '####.####.####.####',
+					PWD: '####.####.####.####',
+					SIGNATURE: '####.####.####.####',
 					METHOD: 'SetExpressCheckout',
 					VERSION: '78',
 					PAYMENTREQUEST_0_PAYMENTACTION: 'SALE',

@@ -4,8 +4,8 @@ require('./qs');
 //var heapdump = require('heapdump');
 
 var gcloud = require('gcloud');
-var gcloudConfig = {projectId: 'hmovil-1190'};
-var cloudStorageBucket = 'hmovil-data';
+var gcloudConfig = {projectId: '####.####.####.####'};
+var cloudStorageBucket = '####.####.####.####';
 var storage = gcloud.storage(gcloudConfig);
 var bucket = storage.bucket(cloudStorageBucket);
 var mongo = require('mongodb').MongoClient;
@@ -20,15 +20,15 @@ var elasticsearch = require('elasticsearch');
 
 
 if(typeof process.env.NODE_ENV === 'undefined' || process.env.NODE_ENV !== 'production'){
-	mongoUri = 'mongodb://127.0.0.1:27017/commerce';
+	mongoUri = 'mongodb://####.####.####.####:27017/commerce';
 	global.searchEngine = new elasticsearch.Client({
-		host: '104.196.104.0:9200'
+		host: '####.####.####.####:9200'
 	});
 }
 else{
 	mongoUri = 'mongodb://10.240.0.10:27017/commerce';
 	global.searchEngine = new elasticsearch.Client({
-		host: '10.240.0.5:9200'
+		host: '####.####.####.####:9200'
 	});
 }
 
